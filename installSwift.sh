@@ -1,33 +1,20 @@
 #!/bin/bash 
 
+clear 
 
-clear # begining from zero
-
-#Colors
 red="\e[1;31m"
 blue="\e[1;34m"
 yellow='\e[1;33m'
 transparent="\e[0m"
-
-# your current os, if not a ubuntu just quiting because aptitude use to install dependencies 
 FINDISTR="lsb_release -r -s"
-# distributive of ubuntu
-CURRENTDISTR="0.0" # means null
-# name of user from what is executed script
+CURRENTDISTR="0.0" 
 USER=`whoami`
-# commands to check
 FINDSWIFT="swift --version"
-# minimum swift version for installation (if lower version exist, it continues installation)
 MINSWIFT="3.1"
-# my link for help and correction (if i got mistakes)
 AUTHORLINK="https://github.com/devm4x" 
-# temporary folder where will be downloaded all files  
 DOWNLOADFOLDER="$HOME/tmpSwift"
-# temporary file in which will be saved swift archive 
 SWIFTFILE="swift_lang.tar.gz"
-# just test sample swift project to show how it works, if user wants
 TEMPPROJECT="spm_example"
-# use this for silent installation
 ARG1="$0"
 
 
@@ -224,8 +211,7 @@ echo "| ok, let's try swift in action!"
 echo "| ==> `swift --version` "
 echo "+--------------------------------------+"
 echo "Can you see version of swift compiler? [y/n]"
-read compAns
-
+read compAns # read answer 
 echo "+------------------------------------------------+"
 echo "| I found two best IDEs for programming on swift |" 
 echo "| Sublime text editor 3 with plugins and         |"
@@ -256,8 +242,6 @@ case $visAns in
 		sudo dpkg -i $DOWNLOADFOLDER/"VisualCodeEditor.deb"
 	;;
 esac 
-
-
 case $compAns in
 	[Yy]* )
 		rm -R $DOWNLOADFOLDER
