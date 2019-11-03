@@ -4,17 +4,11 @@
 # to scan folder for mp3 files and start stream
 
 MUSICARCHIVE="/Server/files/external_hd/Radiofiles/"
-
 EXTNS="mp3"
-
 PLFILE="/Server/files/external_hd/Radiofiles/Playlist.m3u"
-
 CONFIGFILE="/Server/configs/ezstream.conf"
-
 RADIOLOG="/Server/logs/HealthRadio.log"
-
 EZPID=`pidof ezstream`
-
 ICECASTPID=`pidof ezstream`
 
 generateplist() {
